@@ -1,6 +1,4 @@
-*/node_modules/*
-teoría/
-*.db
+
 
 # Logs
 logs
@@ -61,3 +59,6 @@ typings/
 # dotenv environment variables file
 .env
 
+*/node_modules/*
+teoría/
+*.db
