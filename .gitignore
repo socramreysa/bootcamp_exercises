@@ -1,3 +1,7 @@
+*/node_modules/*
+teoría/
+*.db
+
 # Logs
 logs
 *.log
