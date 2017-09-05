@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Resultado de tu búsqueda</title>
+    <style media="screen">
+      ul {
+        list-style-type: none;
+      }
+      li > ul {
+        list-style-type: circle;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= data.Title %></h1>
+    <ul>
+      <li><img src="<%= data.Poster %>" alt=""></li>
+      <li>Año: <%= data.Year %></li>
+      <li>Director: <%= data.Director %></li>
+      <li>Trama: <%= data.Plot %></li>
+      <li>Actores:
+        <ul>
+          <% var listaActores = data.Actors.split(", ") %>
+          <% for( var i = 0; i < listaActores.length; i++){ %>
+            <li><%= listaActores[i] %></li>
+          <% } %>
+        </ul>
+      </li>
+
+    </ul>
+  </body>
+</html>

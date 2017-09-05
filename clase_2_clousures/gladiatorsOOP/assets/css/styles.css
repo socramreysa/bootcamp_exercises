@@ -1,0 +1,31 @@
+.active {
+    border: 3px solid black;
+}
+
+.gladiatorImage {
+    width: 200px;
+    height: 300px;
+}
+
+.arena {
+    border: 2px solid black;
+    height: 200px;
+}
+
+.arena .gladiatorImage {
+    width: 100px;
+    height: 150px;
+}
+
+.gladiator {
+    display: inline;
+}
+
+.gladiator>span {
+    color: grey;
+    font-size: 0.7em
+}
+
+.health {
+    color: red
+}

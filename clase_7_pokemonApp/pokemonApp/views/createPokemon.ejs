@@ -1,0 +1,29 @@
+<%- include header.ejs %>
+
+  <h1><%= nombre%> crea tu pokemon!</h1>
+    <form action="/<%= nombre%>/crearPokemon" method="post">
+      <label>Nombre: </label><input type="String" name="pokemonName" placeholder="texto"><br>
+      <label>Nivel de pokemon: </label><input type="Number" name="pokemonLevel" value="Number"><br>
+      <label>Tipo: </label><br>
+      <input type="radio" name="pokemonType" value="Tierra"> Tierra<br>
+      <input type="radio" name="pokemonType" value="Agua"> Agua<br>
+      <input type="radio" name="pokemonType" value="Aire"> Aire<br>
+      <input type="radio" name="pokemonType" value="Fuego"> Fuego<br>
+      <label>Agregale una imagen, url: </label><input type="String" name="pokemonImgUrl" placeholder="copy url here">
+      <br>
+      <h3>Ahora agregale ataques!</h3>
+        <label>Nombre: </label><input type="String" name="atackName" placeholder="texto"><br>
+        <label>Nivel mínimo: </label><input type="Number" name="atackMinLevel" value="Number"><br>
+        <label>Tipo: </label><br>
+        <input type="radio" name="atackType" value="Tierra"> Tierra<br>
+        <input type="radio" name="atackType" value="Agua"> Agua<br>
+        <input type="radio" name="atackType" value="Aire"> Aire<br>
+        <input type="radio" name="atackType" value="Fuego"> Fuego <br>
+        <label>Description: </label><input type="String" name="atackDescription" placeholder="texto"><br>
+        <label>Daño base: </label><input type="Number" name="atackBaseDamage" value="Number"><br>
+        <label>Acuracy </label><input type="Number" name="atackAcuracy" value="Number"><br>
+        <label>Puntos de poder: </label><input type="Number" name="atackPowerPoints" value="Number"><br>
+      <input type="submit" value="Submit">
+    </form>
+
+<%- include footer.ejs %>

@@ -1,0 +1,19 @@
+<%- include header.ejs %>
+
+  <h1><%= nombre%> crea tu pokemon!</h1>
+  <form action="/<%= nombre%>/crearPokemon" method="post">
+    <label>Nombre: </label><input type="String" name="pokemonName" placeholder="texto"><br>
+    <label>Nivel de pokemon: </label><input type="Number" name="pokemonLevel" value="Number"><br>
+    <label>Tipo: </label><br>
+    <input type="radio" name="pokemonType" value="Tierra"> Tierra<br>
+    <input type="radio" name="pokemonType" value="Agua"> Agua<br>
+    <input type="radio" name="pokemonType" value="Aire"> Aire<br>
+    <input type="radio" name="pokemonType" value="Fuego"> Fuego<br>
+    <label>Agregale una imagen, url: </label><input type="String" name="pokemonImgUrl" placeholder="copy url here"><br>
+    <input type="submit" value="Crear Pokemon">
+</form>
+
+
+
+
+  <%- include footer.ejs %>

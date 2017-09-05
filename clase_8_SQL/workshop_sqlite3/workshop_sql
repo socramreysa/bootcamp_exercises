@@ -1,0 +1,65 @@
+SELECT name, year FROM movies WHERE year=1902 AND rank>5;
+
+SELECT name, year FROM movies WHERE year=1995;
+
+SELECT COUNT(name) FROM movies WHERE year=1982;
+
+SELECT DISTINCT last_name FROM actors WHERE last_name LIKE '%stack%';
+
+SELECT (first_name||","||last_name),
+COUNT(first_name||","||last_name) AS first_name_occurrence
+FROM actors
+GROUP BY (first_name||","||last_name)
+ORDER BY first_name_occurrence DESC
+LIMIT    10;
+
+SELECT last_name, COUNT(last_name) AS coun FROM actors
+GROUP BY last_name
+ORDER BY coun DESC
+LIMIT 10;
+
+SELECT (first_name||","||last_name) AS nombre_y_apellido, COUNT(actor_id) AS roles_realizados
+FROM actors
+JOIN roles
+ON actors.id = roles.actor_id
+GROUP BY actor_id
+ORDER BY roles_realizados DESC
+LIMIT 100;
+
+SELECT genre, COUNT(genre) AS movies FROM movies_genres
+GROUP BY genre
+ORDER BY movies DESC;
+
+
+SELECT (first_name||","||last_name),
+FROM roles
+JOIN actors
+ON actors.id = roles.actor_id
+GROUP BY actor_id
+ORDER BY a DESC
+LIMIT 100;
+
+SELECT (first_name||","||last_name)
+FROM actors
+JOIN roles
+ON actors.id = roles.actor_id
+JOIN movies
+ON roles.movie_id = movies.id
+WHERE movies.name="Braveheart" AND movies.year=1995;
+
+SELECT DISTINCT (first_name||","||last_name), d.name, d.year, c.genre
+FROM directors a
+JOIN movies_directors b
+ON a.id = b.director_id
+JOIN movies_genres c
+ON b.movie_id = c.movie_id
+JOIN movies d
+ON c.movie_id = d.id
+WHERE c.genre="Film-Noir" AND d.year%4 = 0
+ORDER BY d.year ;
+
+SELECT (first_name||","||last_name)
+FROM actors
+JOIN roles
+ON roles.actor_id = actors.id
+WHERE actor_id = "Kevin Bacon";

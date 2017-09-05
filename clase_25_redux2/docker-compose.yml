@@ -1,0 +1,25 @@
+version: '2'
+services:
+  mongo:
+    image: mongo
+  nginx:
+    image: nginx
+    volumes:
+      - ./OMDB_Redux/dist:/var/www/
+      - ./default:/etc/nginx/conf.d/default.conf
+    environment:
+     - NGINX_PORT=80
+    links:
+      - "web:web"
+    ports:
+      - "80:80"
+  web:
+    build: .
+    command: npm start
+    volumes:
+      - ./OMDB_ReduxBack/:/app
+      - ./OMDB_ReduxBack/models:/app/models
+    links:
+      - "mongo:mongo"
+    ports:
+      - "3001:3001"

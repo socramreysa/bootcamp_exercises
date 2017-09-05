@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%= data.Search[0].Title %></h1>
+      <ul>
+        <% for( var i = 0; i < data.Search.length; i++){ %>
+          <li><a href="/pelicula/<%= data.Search[i].Title %>"><%= data.Search[i].Title %></a></li>
+        <% } %>
+      </ul>
+  </body>
+</html>

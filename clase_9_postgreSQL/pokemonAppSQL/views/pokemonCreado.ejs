@@ -1,0 +1,92 @@
+<%- include header.ejs %>
+
+  <div>
+    <h1><%= pokemonName%></h1>
+    <img src="<%= pokemon.imgUrl%>">
+    <div class="li">
+      <ul>
+        <li>Tipo de pokemon:
+          <%= pokemon.tipo%>
+        </li>
+        <li>Nivel:
+          <%= pokemon.level%>
+        </li>
+      </ul>
+      <% if(ataquePoke) {%>
+        <h3>Ataques:</h3>
+        <ul>
+          <% for(var i=0; i <  ataquePoke.length; i++) {%>
+            <li>
+              <%= ataquePoke[i].nombre%>
+            </li>
+            <% } }%>
+        </ul>
+        <h3>Y agregale ataques!</h3>
+        <form action="/<%= name%>/crearPokemon/<%= pokemon.name%>/agregaArmas" method="post">
+          <select name="ataque">
+            <% for(var i=0; i <  ataques.length; i++) {%>
+                <option value="<%= ataques[i].nombre%>"><%= ataques[i].nombre%></option>
+              <% } %>
+              <input type="submit" value="Agregar ataque">
+            </select>
+        </form>
+        <form action="/<%= name%>/<%= pokemon.name%>/eliminarAtaque" method="post">
+          <select name="ataque">
+            <% for(var i=0; i <  ataques.length; i++) {%>
+                <option value="<%= ataques[i].nombre%>"><%= ataques[i].nombre%></option>
+              <% } %>
+              <input type="submit" value="Eliminar ataque">
+            </select>
+        </form>
+        <form action="/<%= name%>/<%= pokemon.name%>/eliminarPokemon" method="post">
+          <input type="submit" value="Eliminar pokemon"></form><br>
+
+        <form action="/<%= name%>/<%= pokemon.name%>/editar" method="post">
+          <label>Editar Pokemon: </label>
+          <select name="pokemonProp">
+                  <option value="name">Nombre</option>
+                  <option value="level">Nivel</option>
+                  <option value="tipo">Tipo</option>
+                  <option value="imgUrl">Imagen</option>
+                </select>
+          <input type="text" name="valorPokemon" placeholder="editar valor"><br>
+          <input type="submit" value="Enviar">
+        </form>
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <form action="/<%= name%>/pokemons" method="post">
+      <input type="submit" value="Volver a Pokemons"></form>
+  </form>
+  <br>
+  <br>
+  <div>
+    <form action="/<%= name%>/<%= pokemon.name%>/crearComentario" method="post">
+      <label>Nombre: </label><input type="String" name="nombre" placeholder="nombre"><br>
+      <label>Email: </label><input type="String" name="email" placeholder="email"><br>
+      <label>Comentario: </label><input type="String" name="content" placeholder="Escribe un comentario"><br>
+      <input type="submit" value="Enviar"></form>
+    </form>
+
+  <% if(comments) {%>
+    <% for(var i=0; i < comments.length; i++) {%>
+      <div>
+        <ul>
+          <li>
+            <%= comments[i].date%>
+          </li>
+          <li>
+            <%= comments[i].name%>
+          </li> <span><%= comments[i].email%></span>
+          <li>
+            <%= comments[i].content%>
+          </li>
+
+        </ul>
+      </div>
+      <% } } %>
+  </div>
+
+  <%- include footer.ejs %>

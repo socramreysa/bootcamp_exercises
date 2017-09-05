@@ -1,0 +1,11 @@
+<%- include header.ejs %>
+
+    <h1><%= pokemon%></h1>
+    <% if( pokemon === "Pikachu"){ %>
+    <h3>You choose wisely!</h3>
+
+      <% }else{%>
+        <h3>You choose poorly!</h3>
+      <% } %>
+      
+<%- include footer.ejs %>

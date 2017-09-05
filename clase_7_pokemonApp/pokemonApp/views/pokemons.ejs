@@ -1,0 +1,11 @@
+<%- include header.ejs %>
+
+    <h1><%= nombre%> elije tu pokemon</h1>
+    <ul>
+      <% for(var i=0; i < pokemon.length; i++) {%>
+        <li><a href="/<%= nombre%>/createdPokemon/<%= pokemon[i].name%>"><%= pokemon[i].name%></a></li>
+      <% } %>
+        <li><a href="/<%= nombre%>/pokemons/CrearPokemon" name "crearPokemon">Crea tu propio Pokemon</a></li>
+    </ul>
+
+<%- include footer.ejs %>

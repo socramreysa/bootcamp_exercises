@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>resultado de busqueda</title>
+  </head>
+  <body>
+    <h1><%= titulo%></h1>
+    <div>
+      <img src="<%= imagen%>">
+    </div>
+    <div>
+      <p>Año: <%= año%></p>
+      <p>Director: <%= director%></p>
+      <p>Sinopsis: <%= plot%></p>
+      <% var actoresArr = actores.split(",") %>
+      <% if(actoresArr.length > 0){ %>
+      <span>Actores: </span>
+      <ul>
+        <% for(var i=0; i < actoresArr.length; i++) {%>
+        <li> <%= actoresArr[i]%> </li>
+        <% } %>
+      </ul>
+      <% } %>
+    </div>
+
+  </body>
+</html>

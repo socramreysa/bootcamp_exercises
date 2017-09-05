@@ -1,0 +1,47 @@
+*{
+  text-align: center;
+}
+body{
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: -webkit-linear-gradient(to top, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2948ff, rgb(234, 190, 16)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh
+}
+li{
+  text-align: left;
+  margin-left: 15%
+}
+a{
+  color: darkblue;
+  font-size: 20px;
+  text-decoration: none;
+}
+img{
+  width: 300px;
+}
+#poke{
+  width: 400px;
+}
+div{
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-left: auto;
+  margin-right:auto;
+  top: 50%
+}
+
+.content{
+  left: 50%;
+  top: 50%;
+}
+#header{
+  margin-top: 10%
+}
+ul{
+  list-style-type: none;
+}
+.li{
+  margin: 0 20%;
+}

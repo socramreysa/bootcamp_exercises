@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>resultado de busqueda</title>
+  </head>
+  <body>
+
+    <% if(link.length > 0){ %>
+    <h1>Resultados: </h1>
+      <% for(var i=0; i < link.length; i++) {%>
+        <h3><a href="http://www.omdbapi.com/?apikey=20dac387&i=" + <%= link[i].imdbID %> > <%= link[i].Title %> </a></h3>
+      <% } %>
+    <% } %>
+    <!--"http://www.omdbapi.com/?apikey=20dac387&i=" -->
+
+  </body>
+</html>
